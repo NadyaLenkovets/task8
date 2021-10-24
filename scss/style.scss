@@ -1,0 +1,161 @@
+@import "_nullstyle";
+
+
+
+:root {
+   --accent: #7D3DCF;
+   --text-dark: #4A4A4A;
+}
+body {
+   font-family: 'Roboto', sans-serif;
+   font-size: 14px;
+   line-height: 1.4;
+   color: var(--text-dark);
+   letter-spacing: 0.03em;
+   background-color: #333;
+   width: 100%;
+   height: 100%;
+}
+.wrapper {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.frame {
+   width: 375px;
+   height: 812px;
+   background-color: #fff;
+   border-radius: 12px;
+   padding: 30px 30px 37px;
+}
+.chat {
+   height: 100%;
+}
+.outer-container {
+   height: 100%;
+}
+.chat-container {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.chatbox {
+   flex: 1 1 auto;
+}
+.title {
+   margin: 0px 0px 17px 0px;
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 19px;
+   text-align: center;
+   text-transform: capitalize;
+}
+.timestamp {
+   margin: 0px 0px 24px 0px;
+   font-size: 12px;
+   line-height: 14px;
+   text-align: center;
+   letter-spacing: 0.03em;
+   text-transform: uppercase;
+}
+.bot-text {
+   padding: 0px 0px 0px 56px;
+   margin: 0px 0px 64px 0px;
+   min-height: 50px;
+   position: relative;
+   animation: floatup 1s;
+   &::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 36px;
+      background: url(../img/bot.png) no-repeat;
+      background-position: top center;
+      background-size: cover;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 0;
+   }
+   span {
+      display: inline-block;
+      height: 100%;
+      max-width: 85%;
+      padding: 17px 20px;
+      background: #FFFFFF;
+      box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.14);
+      border-radius: 10px;
+      line-height: 18px;
+   }
+}
+.user-text {
+   padding: 0px 56px 0px 0px;
+   margin: 0px 0px 64px 0px;
+   min-height: 50px;
+   display: flex;
+   justify-content: flex-end;
+   position: relative;
+   animation: floatup 1s;
+   &::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 36px;
+      background: url(../img/user.png) no-repeat;
+      background-position: top center;
+      background-size: cover;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      right: 0;
+   }
+   span {
+      display: inline-block;
+      height: 100%;
+      max-width: 85%;
+      padding: 17px 20px;
+      color: #fff;
+      background: var(--accent);
+      box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.14);
+      border-radius: 10px;
+      line-height: 18px;
+   }
+}
+.inbut-block {
+
+}
+.text-input {
+   height: 51px;
+   width: 100%;
+   padding: 0px 0px 0px 45px;
+   background: var(--accent);
+   box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.21);
+   border-radius: 20px;
+   color: #fff;
+   border: 2px solid var(--accent);
+   font-family: 'Roboto', sans-serif;
+   font-size: 14px;
+   letter-spacing: 0.03em;
+   transition: 0.4s ease;
+   &::placeholder {
+      color: #fff;
+   }
+   &:focus {
+      background: #fff;
+      color: var(--accent);
+   }
+}
+
+@keyframes floatup {
+   0% {
+      transform: translateY(14px);
+      opacity: 0;
+   }
+   100% {
+      transform: translateY(0px);
+      opacity: 1;
+   }
+}
