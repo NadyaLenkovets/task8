@@ -21,7 +21,7 @@ function getTime() {
 // add first bot message to chat
 
 function firstBotMessage() {
-   let firstMessage = 'Привет! Как дела?';
+   let firstMessage = 'Привет! Задайте мне вопрос.';
 
    document.getElementById('bot-starter-message').innerHTML = '<p class="bot-text"><span class="bot-text__span">' + firstMessage + '</span></p>';
 
@@ -45,6 +45,7 @@ function getHardResponse(userText) {
 
    // add bot loader to chat
    chat.appendChild(botHTML);
+   botHTML.scrollIntoView(true);
 
    setTimeout(() => {
       showBotAnswer();
@@ -60,11 +61,6 @@ function getHardResponse(userText) {
 function getResponse() {
    let userText = document.querySelector('.text-input');
    let userTextValue = document.querySelector('.text-input').value;
-
-   if (userText.value == '') {
-      userText.value = 'Мне нравится этот бот)).';
-      userTextValue = 'Мне нравится этот бот)).';
-   }
 
    // create user response
    let userHTML = document.createElement('p');
@@ -83,13 +79,7 @@ function getResponse() {
    }, 500);
 }
 
-// press Enter to send user message
-document.querySelector('.text-input').addEventListener('keydown', function(event) {
-   if (event.code == 'Enter' || event.code == 'NumpadEnter') {
-      getResponse();
-   }
-})
-
+// send user message
 document.querySelector('.text-input').addEventListener('change', function() {
    getResponse();
 })

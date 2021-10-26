@@ -13,8 +13,6 @@ function getBotResponse(input) {
       return `Вы записаны на стрижку к мастеру Алине в субботу в 10:30.`;
    } else if (input.toLowerCase() == 'пока!') {
       return `До свидания!`;
-   } else if (input == 'Мне нравится этот бот)).') {
-      return 'Спасибо!))';
    } else {
       return 'Я вас не понимаю.'
    }
