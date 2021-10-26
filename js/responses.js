@@ -11,7 +11,7 @@ function getBotResponse(input) {
       return 'В какой день и время вам будет удобно?';
    } else if (input.toLowerCase() == 'в субботу в 10:30.') {
       return `Вы записаны на стрижку к мастеру Алине в субботу в 10:30.`;
-   } else if (input.toLowerCase() == 'Пока!') {
+   } else if (input.toLowerCase() == 'пока!') {
       return `До свидания!`;
    } else if (input == 'Мне нравится этот бот)).') {
       return 'Спасибо!))';
