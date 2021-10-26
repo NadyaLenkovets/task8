@@ -33,6 +33,9 @@ body {
       width: 100%;
       height: 100vh;
    }
+   @media (max-height: 812px) {
+      height: 100%;
+   }
 }
 .chat-area {
    height: 100%;

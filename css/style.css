@@ -124,6 +124,12 @@ body {
   }
 }
 
+@media (max-height: 812px) {
+  .frame {
+    height: 100%;
+  }
+}
+
 .chat-area {
   height: 100%;
   display: flex;
