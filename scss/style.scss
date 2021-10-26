@@ -49,7 +49,7 @@ body {
    display: flex;
    flex-direction: column;
    justify-content: flex-end;
-   overflow: auto;
+   overflow: scroll;
 }
 .title {
    margin: 0px 0px 17px 0px;
