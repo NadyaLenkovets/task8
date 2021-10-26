@@ -117,23 +117,18 @@ body {
   padding: 30px 30px 37px;
 }
 
-.chat {
-  height: 100%;
-}
-
-.outer-container {
-  height: 100%;
-}
-
-.chat-container {
+.chat-area {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
-.chatbox {
+.chat {
   flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
 }
 
 .title {
@@ -142,10 +137,9 @@ body {
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  text-transform: capitalize;
 }
 
-.timestamp {
+#timestamp {
   margin: 0px 0px 24px 0px;
   font-size: 12px;
   line-height: 14px;
@@ -157,7 +151,6 @@ body {
 .bot-text {
   padding: 0px 0px 0px 56px;
   margin: 0px 0px 64px 0px;
-  min-height: 50px;
   position: relative;
   animation: floatup 1s;
 }
@@ -176,7 +169,7 @@ body {
   left: 0;
 }
 
-.bot-text span {
+.bot-text .bot-text__span {
   display: inline-block;
   height: 100%;
   max-width: 85%;
@@ -187,10 +180,66 @@ body {
   line-height: 18px;
 }
 
+.bot-text .loader-block {
+  display: inline-block;
+  height: 50px;
+  width: 95px;
+  padding: 0px 0px 0px 14px;
+  background: #ffffff;
+  box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.14);
+  border-radius: 10px;
+  line-height: 50px;
+}
+
+.bot-text .loader {
+  display: inline-block;
+  margin: 0px 7px 0px 0px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  animation: loader 0.9s ease-in infinite alternate;
+}
+
+.bot-text .loader--left {
+  animation-delay: 0s;
+}
+
+.bot-text .loader--center {
+  animation-delay: 0.45s;
+}
+
+.bot-text .loader--right {
+  animation-delay: 0.9s;
+}
+
+.bot-text .bot-image {
+  width: 180px;
+  height: 140px;
+}
+
+.bot-text .bot-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@keyframes loader {
+  0% {
+    background-color: #c4c4c4;
+  }
+  50% {
+    background-color: var(--accent);
+  }
+  100% {
+    background-color: var(--accent);
+  }
+}
+
 .user-text {
+  flex: 0 1 auto;
   padding: 0px 56px 0px 0px;
   margin: 0px 0px 64px 0px;
-  min-height: 50px;
   display: flex;
   justify-content: flex-end;
   position: relative;
@@ -223,10 +272,14 @@ body {
   line-height: 18px;
 }
 
+.inbut-block {
+  margin: 0px -9px 0px;
+}
+
 .text-input {
   height: 51px;
   width: 100%;
-  padding: 0px 0px 0px 45px;
+  padding: 0px 10px 0px 40px;
   background: var(--accent);
   box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.21);
   border-radius: 20px;

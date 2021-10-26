@@ -60,32 +60,35 @@
 
    <div class="wrapper">
      <div class="frame">
-        <div class="chat">
-           <!-- Message container -->
-           <div class="outer-container">
-              <div class="chat-container">
-                  <!-- Messages -->
-                  <div class="chatbox">
-                     <h2 class="title">First iPhone Design</h2>
-                     <h3 class="timestamp">сегодня в 14:00</h3>
-                     <p class="bot-text" id="bot-starter-message"><span>Загрузка... Загрузка... fgdfgdf G DGlGLu  GlGlUG LUGlK</span></p>
-                     <p class="user-text"><span>Текст dFDFG d gfdzfdh g hxgfh xgfx xg gh gfh xf dFDFG d gfdzfdh g hxgfh xgfx xg gh gfh xf</span></p>
-                  </div>
+        <div class="chat-area">
 
-                  <!-- User input box -->
-                  <div class="inbut-block">
-                     <input type="text" class="text-input" id="text-input" placeholder="Введите сообщение..." name="user-message">
-                  </div>
-                  
-              </div>
-           </div>
+
+            <div class="chat-area__top">
+               <h2 class="title">Чат-бот</h2>
+               <h3 id="timestamp"></h3>
+            </div>
+
+
+            <div class="chat-area__chat chat">
+               <p  id="bot-starter-message"><span class="bot-text__span"></span></p>
+               <!-- <p class="bot-text"><span class="loader-block">
+                  <span class="loader loader--left"></span><span class="loader loader--center"></span><span class="loader loader--right"></span>
+               </span>
+               </p> -->
+                     <!-- <p class="user-text"><span>Текст dFDFG d gfdzfdh g hxgfh xgfx xg gh gfh xf</span></p> -->
+            </div>
+            
+
+            <div class="chat-area__bottom inbut-block">
+               <input type="text" class="text-input" id="text-input" placeholder="Введите сообщение..." name="user-message">
+            </div>
         </div>
      </div>
    </div>
 
 
 
-
+      <script src="js/responses.js"></script>
       <script src="js/script.js"></script>
    </body>
 
