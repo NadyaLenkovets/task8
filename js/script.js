@@ -90,3 +90,6 @@ document.querySelector('.text-input').addEventListener('keydown', function(event
    }
 })
 
+document.querySelector('.text-input').addEventListener('change', function() {
+   getResponse();
+})
