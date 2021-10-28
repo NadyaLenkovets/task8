@@ -1,20 +1,29 @@
 function getBotResponse(input) {
-   if (input.toLowerCase() == 'расскажи шутку.') {
-      return tellAJoke();
-   } else if (input.toLowerCase() == 'какой сегодня день?') {
-      return getDay();
-   } else if (input.toLowerCase() == 'сколько дней осталось до нового года?') {
-      return daysLeftToNewYear();
-   } else if (input.toLowerCase() == 'скинь мемасик).') {
-      return '<img class="bot-image" src="img/image.jpg">';
-   } else if (input.toLowerCase() == 'хочу записаться на стрижку к алине.') {
-      return 'В какой день и время вам будет удобно?';
-   } else if (input.toLowerCase() == 'в субботу в 10:30.') {
-      return `Вы записаны на стрижку к мастеру Алине в субботу в 10:30.`;
-   } else if (input.toLowerCase() == 'пока!') {
-      return `До свидания!`;
-   } else {
-      return 'Я вас не понимаю.'
+   switch(checkString(input)) {
+      case 'расскажи шутку' :
+         return tellAJoke();
+      break;
+      case 'какой сегодня день':
+         return getDay();
+      break;
+      case 'сколько дней осталось до нового года':
+         return daysLeftToNewYear();
+      break;
+      case 'скинь мемасик':
+         return '<img class="bot-image" src="img/image.jpg">';
+      break;
+      case 'хочу записаться на стрижку к алине':
+         return 'В какой день и время вам будет удобно?';
+      break;
+      case 'в субботу в 10:30':
+         return 'Вы записаны на стрижку к мастеру Алине в субботу в 10:30.';
+      break;
+      case 'пока':
+         return 'До свидания!';
+      break;
+      default:
+         return 'Я вас не понимаю.'
+      break;
    }
 } 
 
@@ -70,3 +79,13 @@ function tellAJoke() {
 
    return jokes[counter];
 }
+
+
+function checkString(str) {
+   let strLastSymbol = str[str.length-1];
+   if (strLastSymbol == '.' || strLastSymbol == '!' || strLastSymbol == '?') {
+      return str.slice(0, str.length-1).toLowerCase();
+   } else {
+       return str.toLowerCase();
+   }
+}  
